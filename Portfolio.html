@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Navbar</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .navbar {
+            background-color: #1f242d;
+            color: #fff;
+            padding: 20px 0;
+            /* height: 100px; */
+        }
+
+        .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: 0 auto;
+            height: 70px;
+            padding: 0 20px;
+        }
+
+        .logo {
+            font-size: 30px;
+            font-weight: bolder;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links li {
+            margin-right: 20px;
+            transition-duration: 0.5s;
+        }
+
+        .nav-links li:hover {
+            transform: translateY(-8px);
+            transition-duration: 0.5s;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 18px;
+            transition-duration: 0.5s;
+        }
+
+        .nav-links a:hover {
+            color: #0ef;
+            transition-duration: 0.5s;
+        }
+
+        .burger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .burger div {
+            width: 25px;
+            height: 3px;
+            background-color: #fff;
+            margin: 3px;
+        }
+
+        @media screen and (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .burger {
+                display: flex;
+            }
+        }
+
+        #img {
+            border: 2px solid black;
+            border-radius: 50%;
+            padding: 2px;
+            cursor: pointer;
+        }
+
+        #btn {
+            padding: 11px 20px;
+            border: 0;
+            outline: 0;
+            color: #1f242d;
+            font-weight: bold;
+            box-shadow: 0 0 1rem #0ef;
+            background-color: #0ef;
+            border-radius: 19px;
+            margin-top: 20px;
+            transition-duration: 1s;
+            cursor: pointer;
+        }
+
+        #btn:hover {
+            box-shadow: none;
+            transition-duration: 1s;
+        }
+
+        .main1 {
+            display: flex;
+        }
+
+        .main-content {
+            /* border: 2px solid black; */
+            width: 50%;
+            height: 90vh;
+            padding: 20px 0px 0px 90px;
+            background-color: #1f242d;
+            color: white;
+        }
+
+        .main-pic {
+            /* border: 2px solid red; */
+            width: 50%;
+            background-color: #1f242d;
+            padding-left: 60px;
+            padding-top: 20px;
+        }
+
+        .main2 {
+            display: flex;
+            /* margin-top: 40px; */
+        }
+
+        .main2-pic {
+            /* border: 2px solid green; */
+            height: 80vh;
+            width: 50%;
+            padding-left: 60px;
+            background-color: #1f242d;
+        }
+
+        .main2-content {
+            /* border: 2px solid greenyellow; */
+            width: 50%;
+            padding: 120px 55px 0px 20px;
+            background-color: #1f242d;
+            color: white;
+        }
+
+        #wow {
+            line-height: 20px;
+        }
+
+        .main3 {
+            /* border: 2px solid yellow; */
+            height: 80vh;
+            text-align: center;
+            padding-top: 80px;
+            background-color: #1f242d;
+            color: white;
+        }
+
+        .main3-main {
+            display: flex;
+            /* border: 2px solid red; */
+            text-align: center;
+            justify-content: center;
+            gap: 60px;
+            margin-top: 40px;
+        }
+
+        .html,
+        .css,
+        .js {
+            /* border: 2px solid black; */
+            border-radius: 10px;
+            width: 350px;
+            padding-top: 15px;
+            background-color: #323946;
+            padding-left: 20px;
+            padding-right: 20px;
+            height: 350px;
+            transition-duration: 1s;
+        }
+
+        .html:hover,
+        .css:hover,
+        .js:hover {
+            transform: scale(1.05);
+            transition-duration: 1s;
+            border: 2px solid #0ef;
+        }
+
+        #lang {
+            width: 60px;
+            color: #1f242d;
+            background: transparent;
+        }
+
+        .main3 h2 {
+            padding-bottom: 10px;
+        }
+
+        .main3 p {
+            padding-bottom: 30px;
+        }
+
+        .main4 {
+            /* border: 2px solid black; */
+            height: 110vh;
+            background-color: #1f242d;
+            color: white;
+            text-align: center;
+        }
+
+        .main4 h1 {
+            padding: 80px 0px 50px 0px;
+        }
+
+        #main4-pic {
+            width: 350px;
+            /* border: 2px solid black; */
+            border-radius: 15px;
+            transition-duration: 1s;
+            margin: 10px;
+        }
+
+        #main4-pic:hover {
+            transform: scale(1.05);
+            transition-duration: 1s;
+        }
+
+        .main4-img-1 {
+            /* border: 2px solid green; */
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        label {
+            color: white;
+        }
+
+        .main4-img-2 {
+            text-align: center;
+            display: flex;
+            /* border: 2px solid red; */
+            justify-content: center;
+            gap: 30px;
+        }
+
+        input {
+            height: 50px;
+            width: 300px;
+            border-radius: 8px;
+            border: 0;
+            outline: 0;
+            background-color: #323946;
+            margin: 10px 0px;
+            color: white;
+            padding-left: 10px;
+            font-size: 16px;
+            transition-duration: 1s;
+        }
+
+        input:hover {
+            box-shadow: 0 0 1rem #0ef;
+            transition-duration: 1s;
+        }
+
+        #btn {
+            height: 40px;
+            width: 160px;
+            border-radius: 17px;
+            border: 0;
+            outline: 0;
+            background-color: #0ef;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            box-shadow: 0 0 1rem #0ef;
+            transition-duration: 1s;
+        }
+
+        #btn:hover {
+            transition-duration: 1s;
+            box-shadow: none;
+        }
+
+        h1 {
+            color: white;
+            padding-top: 40px;
+            padding-bottom: 30px;
+        }
+
+        span {
+            color: #0ef;
+        }
+
+        .main5 {
+            background-color: #1f242d;
+            text-align: center;
+            height: 100vh;
+        }
+
+        .footer {
+            background-color: #323946;
+            padding: 20px 5px 20px 110px;
+            /* margin-top: 20px; */
+            color: white;
+        }
+
+        #image {
+            transition-duration: 1s;
+        }
+
+        #image:hover {
+            transform: translateY(-15px);
+            transition-duration: 1s;
+        }
+
+        .magic {
+            transition-duration: 1s;
+        }
+
+        /* #main-img:hover {
+            transform: skew(20deg);
+            transition-duration: 1s;
+        } */
+
+        .magic:hover {
+            transform: translateY(-15px);
+            transition-duration: 1s;
+            box-shadow: none;
+        }
+
+        .magic2 {
+            transform: skew(5deg);
+            transition-duration: 1s;
+            border-radius: 0px 90px 00px 50px;
+        }
+
+        .magic2:hover {
+            transform: skew(-5deg);
+            transition-duration: 1s;
+            border-radius: 90px 0px 90px 0px;
+            box-shadow: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Part 1 - Navbar -->
+
+
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">Portfolio</div>
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+            <div class="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Part 2 - Main Page -->
+
+    <div class="main1">
+        <div class="main-content">
+            <h1 style="font-size: 30px; padding-bottom: 5px;">Hello, It's Me</h1>
+            <h1 style="font-size: 50px; padding-bottom: 5px;">Hafiz M. Abdullah</h1>
+            <h1 style="font-size: 30px; padding-bottom: 15px;">And I'm a <span style="color: #0ef;">Frontend
+                    Developer</span></h1>
+            <p id="para" style="padding-bottom: 5px;">I am a Frontend Developer and I have learnt latest technologies
+                reagarding artificial</p>
+            <p id="para" style="padding-bottom: 25px;">intelligance and according to the future scope.</p>
+            <img src="img/bxl-facebook-circle.svg" alt="" id="img">
+            <img src="img/bxl-twitter.svg" alt="" id="img">
+            <img src="img/bxl-linkedin.svg" alt="" id="img">
+            <img src="img/bx-globe.svg" alt="" id="img"><br>
+            <button id="btn">Download CV</button>
+        </div>
+        <div class="main-pic">
+            <div class="magic"
+                style="border: 2px solid #0ef; width: 450px; height: 450px; border-radius: 50%; background: #0ef; box-shadow: 0 0 1rem #0ef;">
+                <img src="img/ei_1699724801704-removebg-preview.png" alt="" height="450" width="450px" ;
+                    style="padding-bottom: 0px; border-radius: 50%;" id="main-img">
+            </div>
+        </div>
+    </div>
+
+    <!-- Part 3 - About Me -->
+
+    <div class="main2">
+        <div class="main2-pic">
+            <div class="magic2"
+                style="border: 2px solid #0ef; width: 450px; height: 350px; border-radius: ; background: #0ef; box-shadow: 0 0 1rem #0ef; margin-top: 130px;  margin-left: 60px; padding-top: px;">
+                <img src="img/ei_1699724801704-removebg-preview.png" alt="" height="350" width="300px" ;
+                    style="margin-left: 70px; transform: skew(-20deg); padding-bottom: 2px;" id="main-img">
+            </div>
+        </div>
+        <div class="main2-content">
+            <h1 style="padding-bottom: 5px;">About <span style="color: #0ef;">Me</span></h1>
+            <h2 style="padding-bottom: 10px;">Frontend Developer</h2>
+            <p id="wow">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aperiam, culpa placeat inventore
+                blanditiis vero autem nisi quaerat quia quam beatae fuga voluptates magnam a laudantium eligendi ea
+                quisquam esse hic dolor! Earum corrupti deserunt quaerat consequatur dolorum blanditiis quas
+                praesentium. Perferendis optio obcaecati ea eius aspernatur tenetur voluptates veniam quod.</p>
+            <button id="btn">More About Me</button>
+        </div>
+    </div>
+
+    <!-- Part 4 - Our Services -->
+
+    <div class="main3">
+        <h1>Our <span style="color: #0ef;">Services</span></h1>
+        <div class="main3-main">
+            <div class="html">
+                <img src="img/bxl-html5.svg" alt="" id="lang">
+                <h2>HTML-5</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam, tempora. Similique vitae hic
+                    officiis, voluptatum recusandae officia nemo placeat excepturi Lorem ipsum dolor sit amet
+                    consectetur adipisicing elit. Nostrum, tempore!</p>
+                <button id="btn">Read More</button>
+            </div>
+            <div class="css">
+                <img src="img/bxl-css3.svg" alt="" id="lang">
+                <h2>CSS-3</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam, tempora. Similique vitae hic
+                    officiis, voluptatum recusandae officia nemo placeat excepturi Lorem ipsum dolor sit amet
+                    consectetur adipisicing elit. Nostrum, tempore!</p>
+                <button id="btn">Read More</button>
+            </div>
+            <div class="js">
+                <img src="img/bxl-javascript.svg" alt="" id="lang">
+                <h2>JavaScript</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam, tempora. Similique vitae hic
+                    officiis, voluptatum recusandae officia nemo placeat excepturi Lorem ipsum dolor sit amet
+                    consectetur adipisicing elit. Nostrum, tempore!</p>
+                <button id="btn">Read More</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Part 5 - Latest Projects -->
+
+    <div class="main4">
+        <h1 style="padding-top: 150px;">Latest <span style="color: #0ef;">Projects</span></h1>
+        <div class="main4-main">
+            <div class="main4-img-1">
+                <div class="main4-img-1-1">
+                    <img src="https://images.pexels.com/photos/574071/pexels-photo-574071.jpeg?auto=compress&cs=tinysrgb&w=600"
+                        alt="" id="main4-pic">
+                </div>
+                <div class="main4-img-1-2">
+                    <img src="https://images.pexels.com/photos/574069/pexels-photo-574069.jpeg?auto=compress&cs=tinysrgb&w=600"
+                        alt="" id="main4-pic">
+                </div>
+                <div class="main4-img-1-3">
+                    <img src="https://images.pexels.com/photos/2653362/pexels-photo-2653362.jpeg?auto=compress&cs=tinysrgb&w=600"
+                        alt="" id="main4-pic">
+                </div>
+            </div>
+            <div class="main4-img-2">
+                <div class="main4-img-2-1">
+                    <img src="https://images.pexels.com/photos/1933900/pexels-photo-1933900.jpeg?auto=compress&cs=tinysrgb&w=600"
+                        alt="" id="main4-pic">
+                </div>
+                <div class="main4-img-2-2">
+                    <img src="https://images.pexels.com/photos/693859/pexels-photo-693859.jpeg?auto=compress&cs=tinysrgb&w=600"
+                        alt="" id="main4-pic">
+                </div>
+                <div class="main4-img-2-3">
+                    <img src="https://images.pexels.com/photos/270488/pexels-photo-270488.jpeg?auto=compress&cs=tinysrgb&w=600"
+                        alt="" id="main4-pic">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Part 6 - Contact Me -->
+
+    <div class="main5">
+        <h1 style="padding-top: 150px;">Contact <span>Me!</span></h1>
+        <form action="https://formspree.io/f/meqydejj" method="POST">
+            <!-- <label for="name">First Name:</label><br> -->
+            <input type="text" id="name" name="name" placeholder="Enter your First Name">
+            <!-- <label for="name">Last Name:</label> -->
+            <input type="text" id="name" name="name" placeholder="Enter your Last Name"><br>
+            <!-- <label for="email">Email:</label><br> -->
+            <input type="email" id="email" name="_replyto" placeholder="Enter your Email">
+
+            <input type="number" id="number" name="number" placeholder="Enter your Number"><br>
+            <!-- <label for="message">Message:</label><br> -->
+            <input style="height: 180px; width: 600px;" name="message"></input><br>
+            <input type="submit" value="Send Message" id="btn">
+        </form>
+    </div>
+
+    <!-- Part 7 - Footer -->
+
+    <div class="footer">
+        <p>Copyright &copy; 2023 by Hafiz M. Abdullah &nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp; All Rights Reserved.</p>
+    </div>
+
+
+
+
+
+
+
+
+    <script>
+        const burger = document.querySelector('.burger');
+        const navLinks = document.querySelector('.nav-links');
+
+        burger.addEventListener('click', () => {
+
+            burger.classList.toggle('toggle');
+        });
+
+    </script>
+</body>
+
+</html>
