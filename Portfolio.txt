@@ -1,0 +1,9 @@
+This portfolio contains several sections:-
+
+a- Responsive navbar
+b- Main content and image section
+c- About us section
+d- Projects section
+e- Skills section
+f- Form section
+g- Footer
