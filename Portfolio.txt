@@ -9,3 +9,4 @@ f- Form section
 g- Footer
 
 The complete page is fully responsive
+WOW, its amazing
